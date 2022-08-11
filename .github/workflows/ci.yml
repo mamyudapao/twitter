@@ -10,14 +10,14 @@ jobs:
       matrix:
         node-version: [16.x]
 
-      steps:
-        - uses: actions/checkout@v3
-        - name: use Node.js ${ matrix.node-version }
-          uses: actions/setup-node@v3
-          with:
-            node-version: ${ matrix.node-version }
-            cache-dir: "yarn"
-        - name: Install dependencies
-          run: yarn
-        - name: Build test
-          run: yarn run build
+    steps:
+      - uses: actions/checkout@v3
+      - name: use Node.js ${ matrix.node-version }
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${ matrix.node-version }
+          cache-dir: "yarn"
+      - name: Install dependencies
+        run: yarn
+      - name: Build test
+        run: yarn run build
